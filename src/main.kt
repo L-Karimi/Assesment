@@ -1,5 +1,3 @@
-import java.util.SplittableRandom
-
 fun main() {
     var sentence = CurrentAccount(1234, "Jordan Sparks", 123000.0)
     sentence.accountName
@@ -14,9 +12,11 @@ fun main() {
 }
 
 
-open class CurrentAccount(var accountNumber: Int, var accountName: String, var balance: Double) {
 
-    fun withdraw(amount: Double) {
+
+open class CurrentAccount(var accountNumber: String, var accountName: String, var balance: Double) {
+
+    open fun withdraw(amount: Double) {
         balance -= amount
         println(amount)
     }
@@ -34,12 +34,12 @@ open class CurrentAccount(var accountNumber: Int, var accountName: String, var b
     }
 
 }
-open  class savingsAccount(accountName: String,balance: Double,withdraw:Int):CurrentAccount(var accountName:Int,var accountNumber,var balance){
-    override fun withdraw(amount: Double){
-        if (withdraw<=4){
-    }
+open class savingsAccount(accountName: String,accountNumber: String,accountBalance: Double , var withdrawals:Int ):CurrentAccount(accountName,accountNumber,accountBalance,) {
+    override fun withdraw(amount: Double) {
+        if(withdrawals<=4){
 
-}
+        }
+    }
 
 data class Product(var name :String,var weight:String,var price:Int,var category: String){
     fun category(k:List<Product>){
@@ -64,4 +64,7 @@ data class Product(var name :String,var weight:String,var price:Int,var category
         return s.toString()
 
     }
-
+    }
+//    fun evenIndices(arrayOf: Array<String>): Any {
+//        TODO("Not yet implemented")
+//    }
