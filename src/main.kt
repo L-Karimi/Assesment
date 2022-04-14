@@ -10,8 +10,6 @@ fun main() {
 //    deposit(123.5)
     println("$sentence.accountName")
     var y = evenIndices(arrayOf("Christine","Annitah","Hannah"))
-    product("Salt",12,50,"food")
-    product("milk",40,450,"drinks")
 
 }
 
@@ -38,12 +36,15 @@ open class CurrentAccount(var accountNumber: Int, var accountName: String, var b
 
 }
 
-data class product(var name: String, var weight: Int, var price: Int, var category: String) {
-    fun category(groceries: String) {
+data class Product(var name :String,var weight:String,var price:Int,var category: String){
+    fun category(k:List<Product>){
+        var newlist= mutableListOf<String>()
+        k.forEach { b->
 
-
+        }
 
     }
+
 }
 
     fun evenIndices(girls: Array<String>): String {
