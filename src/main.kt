@@ -18,20 +18,25 @@ open class CurrentAccount(var accountNumber: Int, var accountName: String, var b
 
     fun withdraw(amount: Double) {
         balance -= amount
+        println(amount)
     }
 
     fun deposit(amount: Double) {
         var balance = 0.0
         balance += amount
-        println(balance)
-        fun details(x: Int, y: Double, z: String) {
+        println(amount)
 
-        }
     }
 
     fun details(i: Int, d: Double, s: String) {
         println("Account number $accountNumber with balance $balance is operated by $accountName")
 
+    }
+
+}
+open  class savingsAccount(accountName: String,balance: Double,withdraw:Int):CurrentAccount(var accountName:Int,var accountNumber,var balance){
+    override fun withdraw(amount: Double){
+        if (withdraw<=4){
     }
 
 }
